@@ -21,3 +21,4 @@ EXPOSE 3000 3001
 # copy and set entrypoint
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["npm", "start"]
