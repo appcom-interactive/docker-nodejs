@@ -13,6 +13,15 @@ The Dockerfile should look like:
 ```
 FROM appcom/nodejs
 
+# install dependencies (node_modules) and copy into /node
+# we install the node modules this way to benefit from the docker caching and only need to rebuild if package.json 
+# changes
+ADD package.json /tmp/package.json
+RUN cd /tmp \
+  && npm install --only=production \
+  && mv /tmp/node_modules /node/node_modules \
+  && rm -rf /tmp/npm-*
+
 COPY . /node
 ```
 
@@ -21,6 +30,7 @@ The .dockerignore file should list all files that should't be copied into the im
 .editorconfig
 .git
 .gitignore
+Dockerfile
 docker-compose.yml
 node_modules
 ```
