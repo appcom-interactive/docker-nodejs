@@ -44,7 +44,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     npm install -g npm@${NPM_VERSION} \
     && find /usr/lib/node_modules/npm -name test -o -name .bin -type d | xargs rm -rf; \
   fi \
-  && apk del curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ \
+  && apk del curl make gcc g++ python linux-headers binutils-gold gnupg \
   && rm -rf /usr/include /node-${NODE_VERSION}* /usr/share/man /tmp/* /var/cache/apk/* /root/.npm /root/.node-gyp \
     /root/.gnupg /usr/lib/node_modules/npm/man /usr/lib/node_modules/npm/doc /usr/lib/node_modules/npm/html \
     /usr/lib/node_modules/npm/scripts
