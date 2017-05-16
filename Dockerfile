@@ -41,6 +41,9 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
 # port 3000 for http and 3001 for https
 EXPOSE 3000 3001
 
+# create the default nodejs app folder
+RUN mkdir /node
+
 # copy and set entrypoint
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
