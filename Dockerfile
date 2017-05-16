@@ -6,6 +6,17 @@ RUN apk add --no-cache tzdata \
   && cp /usr/share/zoneinfo/Europe/Berlin /etc/localtime \
   && apk del tzdata
 
+# glibc is required for dynamic loading 
+# https://github.com/sgerrand/alpine-pkg-glibc/releases
+ENV GLIBC_FILE=glibc-2.25-r0.apk
+ENV GLIBC_URI=https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk
+RUN apk add --no-cache wget ca-certificates \
+  && cd /tmp \
+  && wget ${GLIBC_URI} \
+  && apk --no-cache --allow-untrusted --force add ${GLIBC_FILE} \
+  && apk del wget ca-certificates \
+  && rm -rf /tmp/* /var/cache/apk/*
+
 # set nodejs and npm version
 ENV NODE_VERSION=v6.10.3
 ENV NPM_VERSION=3
@@ -25,7 +36,7 @@ RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnup
     grep " node-${NODE_VERSION}.tar.xz\$" | sha256sum -c | grep . \
   && tar -xf node-${NODE_VERSION}.tar.xz \
   && cd node-${NODE_VERSION} \
-  && ./configure --prefix=/usr --fully-static \
+  && ./configure --prefix=/usr \
   && make -j$(getconf _NPROCESSORS_ONLN) \
   && make install \
   && cd / \

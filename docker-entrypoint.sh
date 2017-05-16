@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 
 # if the command starts with npm, we will first go to /node and install the dependencies
