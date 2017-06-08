@@ -1,7 +1,9 @@
 # NodeJS Docker Image 
 Default nodejs image used by appcom interactive.
 
+
 ## Usage
+
 This image is intended to be used as base for an nodejs project.
 
 The nodejs app needs to be copied into the /node folder inside the container.
@@ -10,6 +12,7 @@ The file package.json needs to be in /node/package.json.
 Normally there would be a Dockerfile and a .dockerignore file inside the project.
 
 The Dockerfile should look like:
+
 ```
 FROM appcom/nodejs
 
@@ -26,6 +29,7 @@ COPY . /node
 ```
 
 The .dockerignore file should list all files that should't be copied into the image and look like:
+
 ```
 .editorconfig
 .git
@@ -35,7 +39,19 @@ docker-compose.yml
 node_modules
 ```
 
+## Docker Tags
+
+There are the following tags and corresponding versions:
+
+- appcom/nodejs - NodeJS 8 and NPM 5 (Current)
+- appcom/nodejs:8 - NodeJS 8 and NPM 5
+- appcom/nodejs:7 - NodeJS 7 and NPM 4
+- appcom/nodejs:lts - NodeJS 6 and NPM 3 (LTS)
+- appcom/nodejs:6 - NodeJS 6 and NPM 3
+
+
 ## LICENSE
+
 The MIT License (MIT)
 
 Copyright (c) 2017 appcom interactive GmbH. All rights reserved.
