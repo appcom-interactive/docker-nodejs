@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.6
 MAINTAINER Ralph-Gordon Paul <g.paul@appcom-interactive.de>
 
 # set timezone to germany (Europe/Berlin)

@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-docker pull alpine:3.5
+docker pull alpine:3.6
 
 docker build -f Dockerfile-6 -t appcom/nodejs:6 .
 docker build -f Dockerfile-7 -t appcom/nodejs:7 .
