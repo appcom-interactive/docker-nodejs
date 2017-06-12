@@ -50,6 +50,11 @@ There are the following tags and corresponding versions:
 - appcom/nodejs:6 - NodeJS 6 and NPM 3
 
 
+## Known Issues
+
+- Currenlty only production dependecies are installed. This prevents running tests that use devDependencies.
+  - Workaround: create a npm script that installs the devDependencies first like: npm install && npm run test
+
 ## LICENSE
 
 The MIT License (MIT)
