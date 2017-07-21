@@ -18,12 +18,12 @@ RUN apk add --no-cache wget ca-certificates \
   && rm -rf /tmp/* /var/cache/apk/*
 
 # set nodejs and npm version
-ENV NODE_VERSION=v7.10.0
+ENV NODE_VERSION=v7.10.1
 ENV NPM_VERSION=4
 
 # install nodejs
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ \
-  && gpg --keyserver ha.pool.sks-keyservers.net --recv-keys \
+  && gpg --keyserver pgp.mit.edu --recv-keys \
      94AE36675C464D64BAFA68DD7434390BDBE9B9C5 \
      FD3A5288F042B6850C66B31F09FE44734EB7990E \
      71DCFD284A79C3B38668286BC97EC7A07EDE3FC1 \
