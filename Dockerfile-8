@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM alpine:3.7
 MAINTAINER Ralph-Gordon Paul <g.paul@appcom-interactive.de>
 
 # set timezone to germany (Europe/Berlin)
@@ -8,8 +8,8 @@ RUN apk add --no-cache tzdata \
 
 # glibc is required for dynamic loading 
 # https://github.com/sgerrand/alpine-pkg-glibc/releases
-ENV GLIBC_FILE=glibc-2.25-r0.apk
-ENV GLIBC_URI=https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.25-r0/glibc-2.25-r0.apk
+ENV GLIBC_FILE=glibc-2.27-r0.apk
+ENV GLIBC_URI=https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.27-r0/glibc-2.27-r0.apk
 RUN apk add --no-cache wget ca-certificates \
   && cd /tmp \
   && wget ${GLIBC_URI} \
@@ -18,7 +18,7 @@ RUN apk add --no-cache wget ca-certificates \
   && rm -rf /tmp/* /var/cache/apk/*
 
 # set nodejs and npm version
-ENV NODE_VERSION=v8.5.0
+ENV NODE_VERSION=v8.11.1
 ENV NPM_VERSION=5
 
 # install nodejs
