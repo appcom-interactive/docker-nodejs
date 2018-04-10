@@ -43,11 +43,12 @@ node_modules
 
 There are the following tags and corresponding versions:
 
-- appcom/nodejs - NodeJS 8 and NPM 5 (Current)
+- appcom/nodejs - NodeJS 9 and NPM 5 (Current)
+- appcom/nodejs:9 - NodeJS 9 and NPM 5
 - appcom/nodejs:8 - NodeJS 8 and NPM 5
-- appcom/nodejs:7 - NodeJS 7 and NPM 4
-- appcom/nodejs:lts - NodeJS 6 and NPM 3 (LTS)
-- appcom/nodejs:6 - NodeJS 6 and NPM 3
+- appcom/nodejs:7 - NodeJS 7 and NPM 4 (no longer supported)
+- appcom/nodejs:lts - NodeJS 8 and NPM 5 (LTS)
+- appcom/nodejs:6 - NodeJS 6 and NPM 3 (no longer supported)
 
 
 ## Known Issues
@@ -59,7 +60,7 @@ There are the following tags and corresponding versions:
 
 The MIT License (MIT)
 
-Copyright (c) 2017 appcom interactive GmbH. All rights reserved.
+Copyright (c) 2017-2018 appcom interactive GmbH. All rights reserved.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
