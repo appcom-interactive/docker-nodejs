@@ -19,7 +19,7 @@ RUN apk add --no-cache wget ca-certificates \
 
 # set nodejs and npm version
 ENV NODE_VERSION=v9.11.1
-ENV NPM_VERSION=5
+ENV NPM_VERSION=5.6.0
 
 # install nodejs
 RUN apk add --no-cache curl make gcc g++ python linux-headers binutils-gold gnupg libstdc++ \
