@@ -41,15 +41,21 @@ node_modules
 
 ## Docker Tags
 
-There are the following tags and corresponding versions:
+There are the following tags and corresponding versions.
 
-- appcom/nodejs - NodeJS 9 and NPM 5 (Current)
+### Alpine based images
+
+- appcom/nodejs - NodeJS 9 with NPM 5 (Current)
 - appcom/nodejs:9 - NodeJS 9 and NPM 5
 - appcom/nodejs:8 - NodeJS 8 and NPM 5
 - appcom/nodejs:7 - NodeJS 7 and NPM 4 (no longer supported)
 - appcom/nodejs:lts - NodeJS 8 and NPM 5 (LTS)
 - appcom/nodejs:6 - NodeJS 6 and NPM 3 (no longer supported)
 
+### Debian based images
+
+- appcom/nodejs:debian-9 - NodeJS 9
+- appcom/nodejs:debian-10 - NodeJS 10
 
 ## Known Issues
 
